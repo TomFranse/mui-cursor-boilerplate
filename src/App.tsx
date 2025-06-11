@@ -1,40 +1,28 @@
-import React, { useState } from 'react';
 import { ThemeProvider } from '@mui/material/styles';
-import { CssBaseline, Container, Box, Typography, Button, Paper } from '@mui/material';
+import { CssBaseline, Container } from '@mui/material';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import theme from './theme';
 import Header from './components/Header';
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
 
 /**
  * Main application component.
  * @returns A React component
  */
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Header title="MUI Cursor Boilerplate" />
-      <Container maxWidth="md">
-        <Box sx={{ my: 4 }}>
-          <Paper elevation={3} sx={{ p: 3, textAlign: 'center' }}>
-            <Typography variant="h4" component="h1" gutterBottom>
-              Welcome to Your MUI Application
-            </Typography>
-            <Typography variant="body1" paragraph>
-              This is a boilerplate for React applications using TypeScript, Vite, and Material UI.
-              It follows the Google TypeScript Style Guide and includes ESLint and Prettier for code quality.
-            </Typography>
-            <Button 
-              variant="contained" 
-              color="primary" 
-              onClick={() => setCount((prevCount) => prevCount + 1)}
-            >
-              Count is: {count}
-            </Button>
-          </Paper>
-        </Box>
-      </Container>
+      <Router>
+        <Header title="MUI Cursor Boilerplate" />
+        <Container maxWidth="md">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+          </Routes>
+        </Container>
+      </Router>
     </ThemeProvider>
   );
 }

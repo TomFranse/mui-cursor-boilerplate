@@ -5,7 +5,7 @@ This is a React application built with TypeScript and Vite. It follows the Googl
 
 ## Directory Structure
 ```
-mui-cursor-boilerplate/
+doelen-analyse/
 ├── docs/                  # Documentation files
 │   ├── architecture.md    # This file - describes the application architecture
 │   └── changelog.md       # Tracks changes to the application

@@ -1,5 +1,6 @@
-import React from 'react';
-import { AppBar, Toolbar, Typography, Button, Box } from '@mui/material';
+import type { FC } from 'react';
+import { AppBar, Toolbar, Typography, Button } from '@mui/material';
+import { Link as RouterLink } from 'react-router-dom';
 
 interface HeaderProps {
   title: string;
@@ -10,18 +11,19 @@ interface HeaderProps {
  * @param props - Component props
  * @returns A React component
  */
-const Header: React.FC<HeaderProps> = ({ title }) => {
+const Header: FC<HeaderProps> = ({ title }) => {
   return (
     <AppBar position="static">
       <Toolbar>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           {title}
         </Typography>
-        <Box>
-          <Button color="inherit">Home</Button>
-          <Button color="inherit">About</Button>
-          <Button color="inherit">Contact</Button>
-        </Box>
+        <Button color="inherit" component={RouterLink} to="/">
+          Home
+        </Button>
+        <Button color="inherit" component={RouterLink} to="/about">
+          About
+        </Button>
       </Toolbar>
     </AppBar>
   );

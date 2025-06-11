@@ -8,6 +8,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- Duplicated project from `mui-cursor-boilerplate` to `doelen-analyse`.
+
+## [0.1.0] - 2024-06-11
+
+### Added
 - Initial project setup with React, TypeScript, and Vite
 - Material UI integration
 - ESLint configuration with Google TypeScript Style Guide

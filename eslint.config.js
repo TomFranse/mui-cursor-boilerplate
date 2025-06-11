@@ -20,12 +20,11 @@ const googleStyleRules = {
 }
 
 export default tseslint.config(
-  { ignores: ['dist'] },
+  { ignores: ['dist', 'eslint.config.js'] },
   {
     extends: [
       js.configs.recommended,
-      ...tseslint.configs.recommendedTypeChecked,
-      eslintConfigPrettier,
+      ...tseslint.configs.recommended,
     ],
     files: ['**/*.{ts,tsx}'],
     languageOptions: {
@@ -46,6 +45,7 @@ export default tseslint.config(
         'warn',
         { allowConstantExport: true },
       ],
+      '@typescript-eslint/consistent-type-imports': 'error',
       ...googleStyleRules,
     },
   },
