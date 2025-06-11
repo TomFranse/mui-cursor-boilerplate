@@ -20,23 +20,13 @@ import routerBindings, {
 import { BrowserRouter, Outlet, Route, Routes } from "react-router";
 import { Header } from "./components/header";
 import { ColorModeContextProvider } from "./contexts/color-mode";
-import {
-  BlogPostCreate,
-  BlogPostEdit,
-  BlogPostList,
-  BlogPostShow,
-} from "./pages/blog-posts";
-import {
-  CategoryCreate,
-  CategoryEdit,
-  CategoryList,
-  CategoryShow,
-} from "./pages/categories";
+import { DoelenList } from "./pages/doelen/list";
+import { ScholenList } from "./pages/scholen/list";
+import { VakkenList } from "./pages/vakken/list";
 
 function App() {
-  const API_TOKEN =
-    "patI3quNRP17TNsjK.d59600d5955939ed02110fb1107036ff4482496004f020f5bf031f55789cd321";
-  const BASE_ID = "appKYl1H4k9g73sBT";
+  const API_TOKEN = import.meta.env.VITE_AIRTABLE_API_TOKEN;
+  const BASE_ID = import.meta.env.VITE_AIRTABLE_BASE_ID;
 
   return (
     <BrowserRouter>
@@ -53,21 +43,22 @@ function App() {
                 routerProvider={routerBindings}
                 resources={[
                   {
-                    name: "blog_posts",
-                    list: "/blog-posts",
-                    create: "/blog-posts/create",
-                    edit: "/blog-posts/edit/:id",
-                    show: "/blog-posts/show/:id",
+                    name: "Doelen",
+                    list: "/doelen",
                     meta: {
                       canDelete: true,
                     },
                   },
                   {
-                    name: "categories",
-                    list: "/categories",
-                    create: "/categories/create",
-                    edit: "/categories/edit/:id",
-                    show: "/categories/show/:id",
+                    name: "Scholen",
+                    list: "/scholen",
+                    meta: {
+                      canDelete: true,
+                    },
+                  },
+                  {
+                    name: "Vakken",
+                    list: "/vakken",
                     meta: {
                       canDelete: true,
                     },
@@ -90,19 +81,16 @@ function App() {
                   >
                     <Route
                       index
-                      element={<NavigateToResource resource="blog_posts" />}
+                      element={<NavigateToResource resource="Doelen" />}
                     />
-                    <Route path="/blog-posts">
-                      <Route index element={<BlogPostList />} />
-                      <Route path="create" element={<BlogPostCreate />} />
-                      <Route path="edit/:id" element={<BlogPostEdit />} />
-                      <Route path="show/:id" element={<BlogPostShow />} />
+                    <Route path="/doelen">
+                      <Route index element={<DoelenList />} />
                     </Route>
-                    <Route path="/categories">
-                      <Route index element={<CategoryList />} />
-                      <Route path="create" element={<CategoryCreate />} />
-                      <Route path="edit/:id" element={<CategoryEdit />} />
-                      <Route path="show/:id" element={<CategoryShow />} />
+                    <Route path="/scholen">
+                      <Route index element={<ScholenList />} />
+                    </Route>
+                    <Route path="/vakken">
+                      <Route index element={<VakkenList />} />
                     </Route>
                     <Route path="*" element={<ErrorComponent />} />
                   </Route>
