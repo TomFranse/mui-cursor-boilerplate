@@ -1,88 +1,48 @@
-# React + TypeScript + Vite + MUI Boilerplate
+# doelen-analyse
 
-This is a boilerplate for React applications using TypeScript, Vite, and Material UI. It follows the Google TypeScript Style Guide and includes ESLint and Prettier for code quality.
+<div align="center" style="margin: 30px;">
+    <a href="https://refine.dev">
+    <img alt="refine logo" src="https://refine.ams3.cdn.digitaloceanspaces.com/readme/refine-readme-banner.png">
+    </a>
+</div>
+<br/>
 
-## Features
-
-- **React 19**: The latest version of React
-- **TypeScript**: Type-safe JavaScript
-- **Vite**: Fast build tool and development server
-- **Material UI**: Component library with a clean, modern design
-- **ESLint**: Code linting with Google TypeScript Style Guide rules
-- **Prettier**: Code formatting
-- **Documentation**: Architecture documentation and changelog
+This [Refine](https://github.com/refinedev/refine) project was generated with [create refine-app](https://github.com/refinedev/refine/tree/master/packages/create-refine-app).
 
 ## Getting Started
 
-### Prerequisites
+A React Framework for building internal tools, admin panels, dashboards & B2B apps with unmatched flexibility ✨
 
-- Node.js (v18 or higher)
-- npm (v9 or higher)
-
-### Installation
-
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/yourusername/mui-cursor-boilerplate.git
-   cd mui-cursor-boilerplate
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-3. Start the development server:
-   ```bash
-   npm run dev
-   ```
-
-4. Open your browser and navigate to `http://localhost:5173`
-
-## Project Structure
-
-```
-project/
-├── docs/                  # Documentation files
-│   ├── architecture.md    # Application architecture
-│   └── changelog.md       # Tracks changes to the application
-├── public/                # Static assets
-├── src/                   # Source code
-│   ├── assets/            # Images, fonts, etc.
-│   ├── components/        # Reusable React components
-│   ├── theme/             # MUI theme configuration
-│   ├── App.tsx            # Main application component
-│   └── main.tsx           # Application entry point
-└── ...                    # Configuration files
-```
+Refine's hooks and components simplifies the development process and eliminates the repetitive tasks by providing industry-standard solutions for crucial aspects of a project, including authentication, access control, routing, networking, state management, and i18n.
 
 ## Available Scripts
 
-- `npm run dev` - Start the development server
-- `npm run build` - Build the application for production
-- `npm run lint` - Run ESLint to check for code issues
-- `npm run preview` - Preview the production build locally
+### Running the development server.
 
-## Styling
+```bash
+    npm run dev
+```
 
-This boilerplate uses Material UI for styling, which is based on Emotion (CSS-in-JS). The theme is customizable in the `src/theme` directory.
+### Building for production.
 
-## Best Practices
+```bash
+    npm run build
+```
 
-- Follow the Google TypeScript Style Guide
-- Use functional components with hooks
-- Keep components small and focused on a single responsibility
-- Use TypeScript interfaces for props and state
-- Use ESLint and Prettier for code quality
+### Running the production server.
+
+```bash
+    npm run start
+```
+
+## Learn More
+
+To learn more about **Refine**, please check out the [Documentation](https://refine.dev/docs)
+
+- **Airtable Data Provider** [Docs](https://refine.dev/docs/core/providers/auth-provider/)
+- **Material UI** [Docs](https://refine.dev/docs/ui-frameworks/mui/tutorial/)
+- **React Router** [Docs](https://refine.dev/docs/core/providers/router-provider/)
 
 ## License
 
 MIT
-
-## Acknowledgments
-
-- [Vite](https://vitejs.dev/)
-- [React](https://reactjs.org/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Material UI](https://mui.com/)
-- [Google TypeScript Style Guide](https://google.github.io/styleguide/tsguide.html)
